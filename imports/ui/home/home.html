@@ -1,0 +1,31 @@
+<template name="home">
+  <div class="container">
+    <div class="row">
+
+      <div id="sideNav" class="col s6">
+        {{#each recetas}}
+          <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">{{nombre}}</span>
+                <p><b>Descripcion: </b>{{descripcion}}</p>
+                <p><b>Formula: </b>{{formula}}</p>
+                <p><b>Ingredientes: </b></p>
+                {{#each cadaIng this}}
+                  <p><b>Nombre: </b>{{nombre}}</p>
+                  <p><b>Descripcion: </b>{{descripcion}}</p>
+                  <p><b>Formula: </b>{{formula}}</p>
+                {{/each}}
+              </div>
+              <div class="card-action right-align">
+                <a id="borrar" href="#"><i class="material-icons">delete</i>Borrar</a>
+              </div>
+          </div>
+        {{/each}}
+      </div>
+
+      <div id="feed" class="col s6" style="border-left:1px solid #cfd8dc">
+      </div>
+
+    </div>
+  </div>
+</template>

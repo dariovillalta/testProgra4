@@ -1,0 +1,40 @@
+<template name="navBar">
+  <nav class = "accent-3">
+    <div class="nav-wrapper">
+      <div class="container">
+        <a href="/" class="brand-logo left">
+          <img height = "56px" src = "/images/93924282.png">
+        </a>
+        <a href="" class="brand-logo center"> Heisenberg</a>        
+      </div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <!-- <li>{{>loginButtons align="right"}}</li> -->
+        {{#if currentUser}}
+          <li><a id="logout" class="waves-effect waves-light btn light-green accent-4">Logout</a></li>
+        {{else}}
+          <li><a id="logIn" href="#modal" class="waves-effect waves-light btn light-green accent-4">Login</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="row">
+          <div class="input-field offset-s2 col s8">
+            <input id = "usernameInput" type="email" class="validate">
+            <label for="usernameInput">Username</label>
+          </div>
+          <div class="input-field offset-s2 col s8">
+            <input id = "passwordInput" type="password" class="validate">
+            <label for="passwordInput">password</label>
+          </div>
+          <div class="center-align">
+            <a id="login" class="modal-action modal-close waves-green btn-flat waves-effect waves-light btn">
+            <i class="material-icons left">person_pin</i>Iniciar Sesi&otilde;n </a>
+          </div>
+      </div>
+    </div>
+  </div>
+</template>
